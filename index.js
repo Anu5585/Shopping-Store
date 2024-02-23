@@ -108,7 +108,7 @@ function addProductToCart(title, price, productImg) {
     <div class="details-box">
         <div class="cart-product-title">${title}</div>
         <div class="cart-price">${price}</div>
-        <input type="number" value="1" class="cart-quantity">
+        <input type="number" value=1 class="cart-quantity">
     </div>
     <!-- Remove Cart  -->
     <i class='bx bxs-trash cart-remove'></i>`;
@@ -147,3 +147,4 @@ function updateTotal() {
     document.getElementsByClassName("total-price")[0].innerText = "$" + total;
   
 }
+

@@ -20,6 +20,31 @@ img{
 body{
     color: var(--text-color);
 }
+.logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    color: var(--text-color);
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #8a94e0;
+}
 .container{
     max-width: 1068px;
     margin: auto;
@@ -33,9 +58,16 @@ header{
     top:0;
     left: 0;
     width: 100%;
-    background: var(--bg-color);
-    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    background-color: #8a94e0;
+
+    /* box-shadow: 0 1px 4px hsl(0 4% 15% / 10%); */
     z-index: 100;
+    background-color: #333;
+    color: white;
+    /* padding: 10px 20px; */
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
 }
 .nav{
     display: flex;
@@ -46,8 +78,13 @@ header{
 
 .logo{
     font-size: 1.1rem;
-    color:var(--text-color);
+    color:white;
     font-weight: 400;
+    margin: left -205px;
+}
+.logo:hover{
+    color: #ffcc00;
+
 }
 
 #cart-icon{
@@ -61,12 +98,13 @@ header{
     width: 360px;
     min-height: 100vh;
     padding: 20px;
-    background: var(--bg-color);
+    background-color: #8a94e0;
     box-shadow: -2px 0 4px hsl(0 4% 15% / 10%); 
     transition: 0.3s;
 }
 .cart.active{
     right: 0;
+    color: white;
 
 }
 .cart-title{
@@ -108,6 +146,12 @@ header{
     text-align: center;
     font-size: 1rem;
 
+}
+#cart-icon:hover{
+    color: #ffcc00;
+    text-decoration: underline;
+    font-size: 2.2rem;
+    transition: ease-in-out;
 }
 .cart-remove{
     font-size: 24px;
@@ -172,6 +216,9 @@ header{
 .product-box{
     position: relative;
 }
+.ammburger{
+    display: none;
+}
 .product-box:hover{
     padding: 10px;
     border: 1px solid var(--text-color);
@@ -205,46 +252,122 @@ header{
 .add-cart:hover{
     background: hsl(249,32%,17%);
 }
-
+.footer {
+color:white;
+}
 
 
 
 /* responsive */
-
-@media  (max-width:1080px){
-    .nav{
+@media (max-width: 1200px) {
+    .nav {
         padding: 15px;
     }
-    section{
+
+    section {
         padding: 3rem 0 2rem;
     }
-    .container{
+
+    .container {
         margin: 0 auto;
         width: 90%;
     }
-    .shop{
+
+    .shop {
         margin-top: 2rem !important;
     }
 }
 
-@media  (max-width:400px){
-
-    .nav{
+@media (max-width: 992px) {
+    .nav {
         padding: 11px;
     }
-    .logo{
+
+    .logo {
         font-size: 1rem;
     }
-    .cart{
+
+    .cart {
         width: 320px;
     }
+}
 
+@media (max-width: 768px) {
+    .shop {
+        margin-top: 1rem !important;
+    }
+
+    .cart {
+        width: 280px;
+    }
 }
-@media  (max-width:4360px){
-.shop{
-    margin-top: 1rem !important;
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 0.9rem;
+    }
+
+    .cart {
+        width: 240px;
+    }
 }
-.cart{
-    width: 280px;
-}
+@media (max-width: 400px) {
+    .logo {
+        margin: 0;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        transition: all 0.2s ease-in-out;
+        background-color: #333;
+        padding-top: 60px; /* Adjust as needed */
+    }
+
+    .menu li {
+        margin-top: 20px;
+    }
+
+    .menu li a {
+        padding: 10px;
+        color: white;
+    }
+
+    #check:checked ~ .menu {
+        right: 0;
+    }
+
+    .ammburger {
+        display: flex;
+        font-size: 30px;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .ammburger i {
+        color: white;
+    }
+
+    .res {
+        display: none;
+    }
+
+
 }
